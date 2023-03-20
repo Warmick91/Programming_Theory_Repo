@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class AppManager : MonoBehaviour
 {
     private static AppManager instance;

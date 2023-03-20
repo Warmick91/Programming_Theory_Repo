@@ -8,11 +8,11 @@ using TMPro;
 public class MenuUI : MonoBehaviour
 {
     Button startButton;
-    TextMeshPro nameInput;
+    TMP_InputField nameInput;
 
     void Awake()
     {
-        nameInput = GameObject.Find("Name Input").GetComponentInChildren<TextMeshPro>();
+        nameInput = GameObject.Find("Name Input").GetComponentInChildren<TMP_InputField>();
 
         startButton = GameObject.Find("Start Button").GetComponent<Button>();
         startButton.onClick.AddListener(OnStartButtonClicked);
@@ -20,12 +20,13 @@ public class MenuUI : MonoBehaviour
 
     void OnStartButtonClicked()
     {
-        if (nameInput == null)
+        if (nameInput.text.Equals(""))
         {
-            Debug.Log("DUPA");
+            Debug.Log("Enter your name first!");
             return;
         }
         AppManager.Instance.SaveUserName(nameInput.text);
+
         AppManager.Instance.LoadMainScene();
     }
 }
