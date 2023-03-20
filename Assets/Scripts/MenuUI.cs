@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MenuUI : MonoBehaviour
@@ -12,18 +11,11 @@ public class MenuUI : MonoBehaviour
     void Awake()
     {
         startButton = GameObject.Find("Start Button").GetComponent<Button>();
+        startButton.onClick.AddListener(OnStartButtonClicked);
     }
-    // Start is called before the first frame update
-    void Start()
+
+    void OnStartButtonClicked()
     {
-
+        AppManager.Instance.LoadMainScene();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    
 }

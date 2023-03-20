@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class AppManager : MonoBehaviour
@@ -27,4 +28,10 @@ public class AppManager : MonoBehaviour
             return instance;
         }
     }
+
+    public void LoadMainScene()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
 }
