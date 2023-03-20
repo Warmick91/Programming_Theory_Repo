@@ -1,0 +1,11 @@
+Model Information:
+* title:	Star Wars Low Poly 3D Characters
+* source:	https://sketchfab.com/3d-models/star-wars-low-poly-3d-characters-79e1578a33e44955ab3aaebb874994d0
+* author:	aitordsgn (https://sketchfab.com/aitordsgn)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Star Wars Low Poly 3D Characters" (https://sketchfab.com/3d-models/star-wars-low-poly-3d-characters-79e1578a33e44955ab3aaebb874994d0) by aitordsgn (https://sketchfab.com/aitordsgn) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
