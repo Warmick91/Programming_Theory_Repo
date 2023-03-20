@@ -6,7 +6,25 @@ using UnityEngine;
 public class AppManager : MonoBehaviour
 {
     private static AppManager instance;
-    // Start is called before the first frame update
+    public static AppManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+    private static string userName;
+    public static string UserName
+    {
+        get
+        {
+            return userName;
+        }
+        set
+        {
+            userName = value;
+        }
+    }
 
     void Awake()
     {
@@ -21,17 +39,20 @@ public class AppManager : MonoBehaviour
         }
     }
 
-    public static AppManager Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-
     public void LoadMainScene()
     {
         SceneManager.LoadScene("MainScene");
+        Debug.Log("The current username is: " + userName);
+    }
+
+    public void LoadTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void SaveUserName(string name)
+    {
+        UserName = name;
     }
 
 }
