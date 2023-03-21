@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Characters
 {
@@ -11,12 +12,19 @@ namespace Characters
         {
             base.Start();
             Debug.Log("Vader's Start() works");
+            characterLine = "I am altering the deal. Pray I don't alter it any further.";
             UpdateInfo();
         }
-        
+
         public override void SayLine()
         {
-            Debug.Log("I am altering the deal. Pray I don't alter it any further.");
+            // Finding the button manager should be moved to the parent class
+            ButtonManager buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
+            buttonManager.darkSideBubble.SetActive(true);
+            buttonManager.bubbleText.SetActive(true);
+
+            TextMeshProUGUI bubbleText = GameObject.Find("BubbleText").GetComponent<TextMeshProUGUI>();
+            bubbleText.text = characterLine;
         }
 
         public override void UpdateInfo()

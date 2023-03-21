@@ -23,6 +23,9 @@ namespace Characters
         private TextMeshProUGUI bornField;
         private TextMeshProUGUI diedField;
 
+        // Line to be quoted
+        protected string characterLine;
+
         // Finds all required game objects
         protected void Start()
         {

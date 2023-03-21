@@ -2,13 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Characters;
 
 public class ButtonManager : MonoBehaviour
 {
     Button backButton;
+    Button sayLineButton;
+
+    // Characters buttons
     Button vaderButton;
     Button ahsokaButton;
+
+
     GameObject infoPanel;
+    public GameObject darkSideBubble { get; set; }
+    public GameObject bubbleText { get; set; }
+
 
     Vector3 showcasePosition = new Vector3(-1.4f, -0.05f, -19.3f);
     Vector3 showcaseRotation = new Vector3(0, -30, 0);
@@ -18,13 +27,19 @@ public class ButtonManager : MonoBehaviour
     void Start()
     {
         infoPanel = GameObject.Find("InfoPanel");
-        if (currentCharacter == null)
-        {
-            infoPanel.SetActive(false);
-        }
+        infoPanel.SetActive(false);
+
+        darkSideBubble = GameObject.Find("DarkSideBubble");
+        darkSideBubble.SetActive(false);
+
+        bubbleText = GameObject.Find("BubbleText");
+        bubbleText.SetActive(false);
 
         backButton = GameObject.Find("BackButton").GetComponent<Button>();
         backButton.onClick.AddListener(GoBackToMenu);
+
+        sayLineButton = GameObject.Find("LineButton").GetComponent<Button>();
+        sayLineButton.onClick.AddListener(() => RequestLine());
 
         vaderButton = GameObject.Find("VaderButton").GetComponent<Button>();
         vaderButton.name = "vader";
@@ -55,9 +70,30 @@ public class ButtonManager : MonoBehaviour
         infoPanel.SetActive(true);
     }
 
-    // Update is called once per frame
     void GoBackToMenu()
     {
         AppManager.Instance.LoadTitleScene();
+    }
+
+    // Make the character say a line
+    void RequestLine()
+    {
+        if (currentCharacter != null)
+        {
+            Character characterComponent = currentCharacter.GetComponent<Character>();
+            if (characterComponent != null)
+            {
+                characterComponent.SayLine();
+            }
+            else
+            {
+                Debug.LogWarning("The instantiated object does not have a Character component.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No character is instantiated");
+        }
+
     }
 }
