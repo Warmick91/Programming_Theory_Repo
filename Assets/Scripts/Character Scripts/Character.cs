@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Characters
 {
@@ -14,13 +15,25 @@ namespace Characters
         public string Born { get; protected set; }
         public string Died { get; protected set; }
 
-        // 
+        // Fields variables
+        private TextMeshProUGUI nameField;
+        private TextMeshProUGUI affinityField;
+        private TextMeshProUGUI speciesField;
+        private TextMeshProUGUI homeworldField;
+        private TextMeshProUGUI bornField;
+        private TextMeshProUGUI diedField;
 
 
         // Start is called before the first frame update
-        void Start()
+        protected void Start()
         {
-
+            Debug.Log("Character's Start() works");
+            nameField = GameObject.Find("Name").GetComponent<TextMeshProUGUI>();
+            affinityField = GameObject.Find("ForceAffinity").GetComponent<TextMeshProUGUI>();
+            speciesField = GameObject.Find("Species").GetComponent<TextMeshProUGUI>();
+            homeworldField = GameObject.Find("Homeworld").GetComponent<TextMeshProUGUI>();
+            bornField = GameObject.Find("Born").GetComponent<TextMeshProUGUI>();
+            diedField = GameObject.Find("Died").GetComponent<TextMeshProUGUI>();
         }
 
         // Update is called once per frame
@@ -31,6 +44,10 @@ namespace Characters
 
         public abstract void SayLine();
 
-        public abstract void UpdateInfo();
+        public virtual void UpdateInfo()
+        {
+            nameField.text = nameField.text + CharacterName;
+            affinityField.text = nameField.text + Affinity;
+        }
     }
 }

@@ -7,9 +7,10 @@ namespace Characters
     public class Ahsoka : Character
     {
         // Start is called before the first frame update
-        void Start()
+        new void Start()
         {
-
+            base.Start();
+            Debug.Log("Ahsoka's Start() works");
         }
 
         // Update is called once per frame
@@ -25,7 +26,12 @@ namespace Characters
 
         public override void UpdateInfo()
         {
-
+            this.CharacterName = "Ahsoka Tano";
+            this.Affinity = "Light Side";
+            this.Species = "Togruta";
+            this.Homeworld = "Shili";
+            this.Born = "36 BBY";
+            this.Died = "20 BBY (kinda)";
         }
     }
 }

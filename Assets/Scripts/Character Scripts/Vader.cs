@@ -8,9 +8,10 @@ namespace Characters
     {
 
         // Start is called before the first frame update
-        void Start()
+        new void Start()
         {
-
+            base.Start();
+            Debug.Log("Vader's Start() works");
         }
 
         // Update is called once per frame
@@ -26,7 +27,12 @@ namespace Characters
 
         public override void UpdateInfo()
         {
-
+            this.CharacterName = "Darth Vader";
+            this.Affinity = "Dark Side";
+            this.Species = "Human";
+            this.Homeworld = "Tatooine";
+            this.Born = "41 BBY";
+            this.Died = "4 ABY";
         }
     }
 }
