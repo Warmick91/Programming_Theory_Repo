@@ -6,7 +6,6 @@ namespace Characters
 {
     public class Vader : Character
     {
-
         // Start is called before the first frame update
         new void Start()
         {

@@ -8,7 +8,7 @@ namespace Characters
     {
         // Start is called before the first frame update
         new void Start()
-        {
+        {   
             base.Start();
             Debug.Log("Ahsoka's Start() works");
             UpdateInfo();
