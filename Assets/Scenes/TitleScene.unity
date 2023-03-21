@@ -1021,6 +1021,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9bfaed1dc7c0f4ab468ef2c1f32512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 3083754919388715843, guid: 2342cccf03e25124589421b8f8a5baf9, type: 3}
+  - {fileID: 4449621558740020980, guid: 4f0126ff48e21464eac478468d8f3138, type: 3}
+  - {fileID: 9178599210910564798, guid: ffdfcac74d8a6134098a93b342e75778, type: 3}
+  - {fileID: 5851240747683359215, guid: 5821d8b27fa822848b2418c05d877507, type: 3}
+  - {fileID: 2479885468276595165, guid: 730948ecf4a1aa04c946b4ed69439466, type: 3}
+  - {fileID: 4054376272397880818, guid: c83cd2ba2fed852409381cd30f080bd6, type: 3}
+  - {fileID: 7714351884350384017, guid: 0b24c749e11ec1a4b9caae10a5e4edaa, type: 3}
+  - {fileID: 8060969819741490488, guid: 38a276cd7bd7c7946a7bbb2b04f2ea40, type: 3}
+  - {fileID: 4608996380976557607, guid: a675dc122e20f924692d0cff4b5028e6, type: 3}
+  - {fileID: 8172684989784329945, guid: d9256b3c8b434af42b7000e48818c42b, type: 3}
+  - {fileID: 3612968921712939598, guid: ed967551344e62549a31b3ac02615dfc, type: 3}
+  - {fileID: 1014654777967634791, guid: eae5951437f8cf04a857d2be057ac555, type: 3}
+  - {fileID: 8595979126379963164, guid: e425d3ff339401f4d8af369f663e7857, type: 3}
 --- !u!1 &1385468318
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,9 @@ namespace Characters
         {
             base.Start();
             Debug.Log("Vader's Start() works");
+            UpdateInfo();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
+        
         public override void SayLine()
         {
             Debug.Log("I am altering the deal. Pray I don't alter it any further.");
@@ -33,6 +28,7 @@ namespace Characters
             this.Homeworld = "Tatooine";
             this.Born = "41 BBY";
             this.Died = "4 ABY";
+            base.UpdateInfo();
         }
     }
 }

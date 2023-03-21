@@ -6,6 +6,12 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class AppManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] characters;
+    public GameObject[] Characters()
+    {
+        return characters;
+    }
+
     private static AppManager instance;
     public static AppManager Instance
     {

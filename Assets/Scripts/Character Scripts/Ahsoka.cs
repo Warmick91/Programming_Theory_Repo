@@ -11,12 +11,7 @@ namespace Characters
         {
             base.Start();
             Debug.Log("Ahsoka's Start() works");
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            UpdateInfo();
         }
 
         public override void SayLine()
@@ -32,6 +27,7 @@ namespace Characters
             this.Homeworld = "Shili";
             this.Born = "36 BBY";
             this.Died = "20 BBY (kinda)";
+            base.UpdateInfo();
         }
     }
 }

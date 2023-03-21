@@ -23,8 +23,7 @@ namespace Characters
         private TextMeshProUGUI bornField;
         private TextMeshProUGUI diedField;
 
-
-        // Start is called before the first frame update
+        // Finds all required game objects
         protected void Start()
         {
             Debug.Log("Character's Start() works");
@@ -36,18 +35,30 @@ namespace Characters
             diedField = GameObject.Find("Died").GetComponent<TextMeshProUGUI>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public abstract void SayLine();
 
+        // Resets the fields' values for the next character's info
+        private void ResetInfo()
+        {
+            nameField.text = "Name: ";
+            affinityField.text = "Force Affinity: ";
+            speciesField.text = "Species: ";
+            homeworldField.text = "Homeworld: ";
+            bornField.text = "Born: ";
+            diedField.text = "Died: ";
+        }
+
+        // Concatenates the info of the next character to the default fields' values set in ResetInfo();
         public virtual void UpdateInfo()
         {
-            nameField.text = nameField.text + CharacterName;
-            affinityField.text = nameField.text + Affinity;
+            ResetInfo();
+            nameField.text += CharacterName;
+            affinityField.text += Affinity;
+            speciesField.text += Species;
+            homeworldField.text += Homeworld;
+            bornField.text += Born;
+            diedField.text += Died;
         }
+
     }
 }
