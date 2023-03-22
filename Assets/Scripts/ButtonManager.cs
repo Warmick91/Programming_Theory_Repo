@@ -12,6 +12,17 @@ public class ButtonManager : MonoBehaviour
     // Characters buttons
     Button vaderButton;
     Button ahsokaButton;
+    Button groguButton;
+    Button ackbarButton;
+    Button mandoButton;
+    Button bokatanButton;
+    Button jarjarButton;
+    Button heraButton;
+    Button kiadiButton;
+    Button droidButton;
+    Button caraButton;
+    Button stormtrooperButton;
+    Button obiwanButton;
 
 
     GameObject infoPanel;
@@ -48,6 +59,50 @@ public class ButtonManager : MonoBehaviour
         ahsokaButton = GameObject.Find("AhsokaButton").GetComponent<Button>();
         ahsokaButton.name = "ahsoka";
         ahsokaButton.onClick.AddListener(() => LoadCharacter("ahsoka"));
+
+        groguButton = GameObject.Find("GroguButton").GetComponent<Button>();
+        groguButton.name = "grogu";
+        groguButton.onClick.AddListener(() => LoadCharacter("grogu"));
+
+        ackbarButton = GameObject.Find("AckbarButton").GetComponent<Button>();
+        ackbarButton.name = "ackbar";
+        ackbarButton.onClick.AddListener(() => LoadCharacter("ackbar"));
+
+        mandoButton = GameObject.Find("MandoButton").GetComponent<Button>();
+        mandoButton.name = "mando";
+        mandoButton.onClick.AddListener(() => LoadCharacter("mando"));
+
+        bokatanButton = GameObject.Find("BoKatanButton").GetComponent<Button>();
+        bokatanButton.name = "bokatan";
+        bokatanButton.onClick.AddListener(() => LoadCharacter("bokatan"));
+
+        jarjarButton = GameObject.Find("JarJarButton").GetComponent<Button>();
+        jarjarButton.name = "jarjar";
+        jarjarButton.onClick.AddListener(() => LoadCharacter("jarjar"));
+
+        heraButton = GameObject.Find("HeraButton").GetComponent<Button>();
+        heraButton.name = "hera";
+        heraButton.onClick.AddListener(() => LoadCharacter("hera"));
+
+        kiadiButton = GameObject.Find("KiAdiButton").GetComponent<Button>();
+        kiadiButton.name = "kiadi";
+        kiadiButton.onClick.AddListener(() => LoadCharacter("kiadi"));
+
+        droidButton = GameObject.Find("DroidButton").GetComponent<Button>();
+        droidButton.name = "droid";
+        droidButton.onClick.AddListener(() => LoadCharacter("droid"));
+
+        caraButton = GameObject.Find("CaraButton").GetComponent<Button>();
+        caraButton.name = "cara";
+        caraButton.onClick.AddListener(() => LoadCharacter("cara"));
+
+        stormtrooperButton = GameObject.Find("StormtrooperButton").GetComponent<Button>();
+        stormtrooperButton.name = "stormtrooper";
+        stormtrooperButton.onClick.AddListener(() => LoadCharacter("stormtrooper"));
+
+        obiwanButton = GameObject.Find("ObiwanButton").GetComponent<Button>();
+        obiwanButton.name = "obiwan";
+        obiwanButton.onClick.AddListener(() => LoadCharacter("obiwan"));
     }
 
     // Loads a new character after a button is clicked

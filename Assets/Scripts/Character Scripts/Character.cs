@@ -8,7 +8,7 @@ namespace Characters
     public abstract class Character : MonoBehaviour
     {
         // Info variables
-        public string CharacterName { get; protected set; }
+        public string CharacterName { get ; protected set; }
         public string Affinity { get; protected set; }
         public string Species { get; protected set; }
         public string Homeworld { get; protected set; }
