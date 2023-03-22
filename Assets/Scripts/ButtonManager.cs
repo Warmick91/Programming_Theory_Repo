@@ -83,7 +83,7 @@ public class ButtonManager : MonoBehaviour
             Character characterComponent = currentCharacter.GetComponent<Character>();
             if (characterComponent != null)
             {
-                characterComponent.SayLine();
+                StartCoroutine(characterComponent.SayLine());
             }
             else
             {

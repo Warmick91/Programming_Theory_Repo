@@ -38,14 +38,30 @@ namespace Characters
             diedField = GameObject.Find("Died").GetComponent<TextMeshProUGUI>();
         }
 
-        public void SayLine()
+
+        // public IEnumerator TEST()
+        // {
+        //     Debug.Log("WAITING...");
+        //     yield return new WaitForSeconds(1);
+        //     Debug.Log("TEST SUCESSFUL");
+        // }
+
+        public IEnumerator SayLine()
         {
             ButtonManager buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
+            Debug.Log("ButtonManager object found and assigned");
+            TextMeshProUGUI bubbleTextUGUI = buttonManager.bubbleText.GetComponent<TextMeshProUGUI>();
+            Debug.Log("BubbleText's TMProUGUI found and assigned");
+            bubbleTextUGUI.text = characterLine;
+
             buttonManager.darkSideBubble.SetActive(true);
             buttonManager.bubbleText.SetActive(true);
 
-            TextMeshProUGUI bubbleText = GameObject.Find("BubbleText").GetComponent<TextMeshProUGUI>();
-            bubbleText.text = characterLine;
+            yield return new WaitForSeconds(3);
+
+            buttonManager.darkSideBubble.SetActive(false);
+            buttonManager.bubbleText.SetActive(false);
+
         }
 
         // Resets the fields' values for the next character's info
