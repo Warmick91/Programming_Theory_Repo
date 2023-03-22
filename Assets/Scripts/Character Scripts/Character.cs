@@ -26,10 +26,17 @@ namespace Characters
         // Line to be quoted
         protected string characterLine;
 
+        //Rotator variables
+        public Quaternion initialRotation;
+        private float turn;
+        public float mouseSensitivity = 400f;
+
         // Finds all required game objects
         protected void Start()
         {
             Debug.Log("Character's Start() works");
+            initialRotation = transform.localRotation;
+
             nameField = GameObject.Find("Name").GetComponent<TextMeshProUGUI>();
             affinityField = GameObject.Find("ForceAffinity").GetComponent<TextMeshProUGUI>();
             speciesField = GameObject.Find("Species").GetComponent<TextMeshProUGUI>();
@@ -38,13 +45,15 @@ namespace Characters
             diedField = GameObject.Find("Died").GetComponent<TextMeshProUGUI>();
         }
 
+        void Update()
+        {
+           RotateCharacterOnClick();
+        }
 
-        // public IEnumerator TEST()
-        // {
-        //     Debug.Log("WAITING...");
-        //     yield return new WaitForSeconds(1);
-        //     Debug.Log("TEST SUCESSFUL");
-        // }
+        void RotateCharacterOnClick(){
+            turn += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            transform.localRotation = initialRotation * Quaternion.Euler(0, -turn, 0);
+        }
 
         public IEnumerator SayLine()
         {
