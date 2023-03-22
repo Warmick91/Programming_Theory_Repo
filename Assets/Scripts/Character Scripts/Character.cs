@@ -47,10 +47,20 @@ namespace Characters
 
         void Update()
         {
-           RotateCharacterOnClick();
+            RotateCharacterOnClick();
         }
 
-        void RotateCharacterOnClick(){
+        void RotateCharacterOnClick()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                turn += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                transform.localRotation = initialRotation * Quaternion.Euler(0, -turn, 0);
+            }
+        }
+
+        void OnMouseDown()
+        {
             turn += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             transform.localRotation = initialRotation * Quaternion.Euler(0, -turn, 0);
         }

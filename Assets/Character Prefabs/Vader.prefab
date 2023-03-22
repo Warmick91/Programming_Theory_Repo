@@ -1633,6 +1633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437267859400956440}
   - component: {fileID: -849244602993975949}
+  - component: {fileID: 32307052664258215}
   m_Layer: 0
   m_Name: Vader
   m_TagString: Untagged
@@ -1677,6 +1678,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bdbcb8ff6349c42895bfc52bd0f724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  mouseSensitivity: 400
+--- !u!64 &32307052664258215
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595979126379963164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8687502918877027034
 GameObject:
   m_ObjectHideFlags: 0
