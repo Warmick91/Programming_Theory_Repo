@@ -8,15 +8,11 @@ namespace Characters
     {
         // Start is called before the first frame update
         new void Start()
-        {   
+        {
             base.Start();
             Debug.Log("Ahsoka's Start() works");
+            characterLine = $"You don't have to carry a sword to be powerful, {AppManager.UserName}.";
             UpdateInfo();
-        }
-
-        public override void SayLine()
-        {
-            Debug.Log("You Don't Have To Carry A Sword To Be Powerful.");
         }
 
         public override void UpdateInfo()

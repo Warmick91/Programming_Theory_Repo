@@ -38,7 +38,15 @@ namespace Characters
             diedField = GameObject.Find("Died").GetComponent<TextMeshProUGUI>();
         }
 
-        public abstract void SayLine();
+        public void SayLine()
+        {
+            ButtonManager buttonManager = GameObject.Find("ButtonManager").GetComponent<ButtonManager>();
+            buttonManager.darkSideBubble.SetActive(true);
+            buttonManager.bubbleText.SetActive(true);
+
+            TextMeshProUGUI bubbleText = GameObject.Find("BubbleText").GetComponent<TextMeshProUGUI>();
+            bubbleText.text = characterLine;
+        }
 
         // Resets the fields' values for the next character's info
         private void ResetInfo()
