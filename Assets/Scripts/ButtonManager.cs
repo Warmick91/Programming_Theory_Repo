@@ -100,7 +100,7 @@ public class ButtonManager : MonoBehaviour
         stormtrooperButton.name = "stormtrooper";
         stormtrooperButton.onClick.AddListener(() => LoadCharacter("stormtrooper"));
 
-        obiwanButton = GameObject.Find("ObiwanButton").GetComponent<Button>();
+        obiwanButton = GameObject.Find("ObiWanButton").GetComponent<Button>();
         obiwanButton.name = "obiwan";
         obiwanButton.onClick.AddListener(() => LoadCharacter("obiwan"));
     }
