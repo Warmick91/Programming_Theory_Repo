@@ -21,7 +21,7 @@ namespace Characters
             this.CharacterName = "Grogu";
             this.Affinity = "Light Side";
             this.Species = "Unknown";
-            this.Homeworld = "Coruscant (presumably)";
+            this.Homeworld = "Coruscant (?)";
             this.Born = "41 BBY";
             this.Died = "N/A";
             base.UpdateInfo();
