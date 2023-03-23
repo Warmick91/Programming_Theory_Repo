@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Hera : MonoBehaviour
+namespace Characters
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Hera : Character
     {
-        
-    }
+        new void Start()
+        {
+            base.Start();
+            Debug.Log("Hera's Start() works");
+            characterLine = $"May the Force be with you, {AppManager.UserName}.";
+            UpdateInfo();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void UpdateInfo()
+        {
+            this.CharacterName = "Hera Syndulla";
+            this.Affinity = "Light Side";
+            this.Species = "Twi'lek";
+            this.Homeworld = "Ryloth";
+            this.Born = "Unknown";
+            this.Died = "Unknown";
+            base.UpdateInfo();
+        }
     }
 }
