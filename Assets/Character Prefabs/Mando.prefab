@@ -1999,6 +1999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4198391334664830590}
   - component: {fileID: -5843815780764703717}
+  - component: {fileID: 2347509281544332519}
   m_Layer: 0
   m_Name: Mando
   m_TagString: Untagged
@@ -2039,6 +2040,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2347509281544332519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4608996380976557607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe4fb4415661024e864ee3154eaa140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  mouseSensitivity: 400
 --- !u!1 &4637772472989038860
 GameObject:
   m_ObjectHideFlags: 0

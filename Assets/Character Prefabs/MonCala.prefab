@@ -858,6 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6048206283391192}
   - component: {fileID: -7059522341427862798}
+  - component: {fileID: 6602667257755781974}
   m_Layer: 0
   m_Name: MonCala
   m_TagString: Untagged
@@ -898,6 +899,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6602667257755781974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172684989784329945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04223c1e65666e4cbb07897faa533b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
+  mouseSensitivity: 400
 --- !u!1 &8542203587640654172
 GameObject:
   m_ObjectHideFlags: 0

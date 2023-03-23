@@ -37,6 +37,107 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetUpElements();
+        SetUpButtons();
+    }
+
+    // Loads a new character after a button is clicked
+    void LoadCharacter(string buttonIdName)
+    {
+        if (currentCharacter != null) Destroy(currentCharacter);
+
+        int characterIndex = -1;
+
+        switch (buttonIdName)
+        {
+            case "ahsoka":
+                characterIndex = 0;
+                break;
+            case "bokatan":
+                characterIndex = 1;
+                break;
+            case "cara":
+                characterIndex = 2;
+                break;
+            case "droid":
+                characterIndex = 3;
+                break;
+            case "grogu":
+                characterIndex = 4;
+                break;
+            case "hera":
+                characterIndex = 5;
+                break;
+            case "jarjar":
+                characterIndex = 6;
+                break;
+            case "kiadi":
+                characterIndex = 7;
+                break;
+            case "mando":
+                characterIndex = 8;
+                break;
+            case "ackbar":
+                characterIndex = 9;
+                break;
+            case "obiwan":
+                characterIndex = 10;
+                break;
+            case "stormtrooper":
+                characterIndex = 11;
+                break;
+            case "vader":
+                characterIndex = 12;
+                break;
+            default:
+                Debug.Log("No character chosen for instantiation");
+                break;
+        }
+
+        if (characterIndex >= 0 && characterIndex < AppManager.Instance.Characters().Length)
+        {
+            currentCharacter = GameObject.Instantiate(
+                AppManager.Instance.Characters()[characterIndex],
+                showcasePosition,
+                AppManager.Instance.Characters()[characterIndex].transform.rotation
+            );
+            infoPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning($"Invalid character index: {characterIndex}");
+        }
+    }
+
+    void GoBackToMenu()
+    {
+        AppManager.Instance.LoadTitleScene();
+    }
+
+    // Make the character say a line
+    void RequestLine()
+    {
+        if (currentCharacter != null)
+        {
+            Character characterComponent = currentCharacter.GetComponent<Character>();
+            if (characterComponent != null)
+            {
+                StartCoroutine(characterComponent.SayLine());
+            }
+            else
+            {
+                Debug.LogWarning("The instantiated object does not have a Character component.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No character is instantiated");
+        }
+
+    }
+
+    void SetUpElements()
+    {
         infoPanel = GameObject.Find("InfoPanel");
         infoPanel.SetActive(false);
 
@@ -45,7 +146,9 @@ public class ButtonManager : MonoBehaviour
 
         bubbleText = GameObject.Find("BubbleText");
         bubbleText.SetActive(false);
-
+    }
+    void SetUpButtons()
+    {
         backButton = GameObject.Find("BackButton").GetComponent<Button>();
         backButton.onClick.AddListener(GoBackToMenu);
 
@@ -103,52 +206,5 @@ public class ButtonManager : MonoBehaviour
         obiwanButton = GameObject.Find("ObiWanButton").GetComponent<Button>();
         obiwanButton.name = "obiwan";
         obiwanButton.onClick.AddListener(() => LoadCharacter("obiwan"));
-    }
-
-    // Loads a new character after a button is clicked
-    void LoadCharacter(string buttonIdName)
-    {
-        if (currentCharacter != null) Destroy(currentCharacter);
-
-        switch (buttonIdName)
-        {
-            case "ahsoka":
-                currentCharacter = GameObject.Instantiate(AppManager.Instance.Characters()[0], showcasePosition, AppManager.Instance.Characters()[0].transform.rotation);
-                break;
-            case "vader":
-                currentCharacter = GameObject.Instantiate(AppManager.Instance.Characters()[12], showcasePosition, AppManager.Instance.Characters()[12].transform.rotation);
-                break;
-            default:
-                Debug.Log("No character chosen for instantiation");
-                break;
-        }
-        infoPanel.SetActive(true);
-    }
-
-    void GoBackToMenu()
-    {
-        AppManager.Instance.LoadTitleScene();
-    }
-
-    // Make the character say a line
-    void RequestLine()
-    {
-        if (currentCharacter != null)
-        {
-            Character characterComponent = currentCharacter.GetComponent<Character>();
-            if (characterComponent != null)
-            {
-                StartCoroutine(characterComponent.SayLine());
-            }
-            else
-            {
-                Debug.LogWarning("The instantiated object does not have a Character component.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No character is instantiated");
-        }
-
     }
 }
