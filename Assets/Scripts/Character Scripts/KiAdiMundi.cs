@@ -11,7 +11,7 @@ namespace Characters
         {
             base.Start();
             Debug.Log("Ki-Adi-Mundi's Start() works");
-            characterLine = $"The Force is strong with you, {AppManager.UserName}.";
+            characterLine = $"What about the droid attack on the Wookiees, {AppManager.UserName}?";
             UpdateInfo();
         }
 

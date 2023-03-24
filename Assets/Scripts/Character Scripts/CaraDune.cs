@@ -11,7 +11,7 @@ namespace Characters
         {
             base.Start();
             Debug.Log("Cara Dune's Start() works");
-            characterLine = $"I've seen worse, {AppManager.UserName}.";
+            characterLine = $"I'm shooting my way out of here, {AppManager.UserName}.";
             UpdateInfo();
         }
 
